@@ -1,0 +1,43 @@
+.summaryModuleAction { margin-bottom: 14px; }
+.summaryToolbar { display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:16px; }
+.summarySheetTabs { display:flex; gap:6px; }
+.summarySheetTabs button.active { background:#18231e; color:#fff; }
+.summaryPaper,.subtopicPaper { width:210mm; min-height:297mm; margin:0 auto 20px; padding:14mm; background:#fff; color:#000; box-shadow:0 8px 40px #bfc6c1; font-family:"TH Sarabun New","TH SarabunPSK",serif; font-size:16pt; }
+.summaryPaper h1 { margin:0 0 3mm; text-align:center; font-size:20pt; letter-spacing:0; }
+.summaryMeta { display:grid; grid-template-columns:15mm 28mm 21mm 42mm 17mm 1fr; align-items:start; line-height:1.1; }
+.summaryMeta i { grid-column:1/-1; height:1mm; }
+.summaryMeta .job,.summaryMeta i + b { min-height:8mm; padding:0 1mm 1.5mm; border-bottom:1px solid #000; line-height:1.15; align-self:stretch; }
+.summaryMeta .job { grid-column:2/7; }
+.summaryRegion { grid-column:5/7; display:flex; align-items:center; justify-content:flex-start; gap:1.5mm; min-height:7mm; padding:0; border:0; font-size:16pt; font-weight:400; white-space:nowrap; }
+.summaryRegion b { font-weight:400; }
+.wbs { padding:2mm 0; font-weight:700; }
+.summaryBody { border-top:3px double #000; }
+.summarySection { margin-top:2mm; }
+.summarySection h2 { margin:0; padding:1.5mm 0 .8mm 4mm; font-size:16pt; font-weight:700; line-height:1.1; }
+.summaryItem { display:grid; grid-template-columns:10mm 1fr 34mm 11mm; column-gap:3mm; min-height:7mm; align-items:center; }
+.summaryItem span:nth-child(2) { padding-left:1mm; }
+.summaryItem span:first-child { padding-right:2mm; text-align:right; font-weight:700; }
+.summaryItem b,.summarySubtotal b,.summaryAmount b { text-align:right; font-weight:400; }
+.summarySubtotal { display:grid; grid-template-columns:1fr 34mm 11mm; column-gap:3mm; min-height:7mm; align-items:center; padding-top:.5mm; border-bottom:1px solid #000; font-weight:700; }
+.summarySubtotal span:first-child { text-align:right; padding-right:5mm; }
+.summaryAmount { display:grid; grid-template-columns:minmax(0,1fr) 31mm 9mm; column-gap:2.5mm; min-height:7mm; align-items:center; border-bottom:1px solid #000; font-weight:400; }
+.summaryAmount>span:first-child { white-space:nowrap; }
+.summaryAmount.strong { margin-top:1mm; padding-top:1mm; border-top:3px double #000; border-bottom:3px double #000; }
+.summaryAmount.noLine { border-bottom:0; }
+.summarySubtotal>* { font-weight:700; }
+.summarySubtotal b,.summarySubtotal span { font-weight:700; }
+.summaryAmount>* { font-weight:400; }
+.summaryAmount.strong>* { font-weight:700; }
+.summaryItem>span:last-child,.summarySubtotal>span:last-child,.summaryAmount>span:last-child { padding-left:1mm; text-align:left; }
+.summaryAmount.deduction { font-size:16pt; }
+.summaryNote { margin:2mm 0 0; color:#000; font-size:13pt; line-height:1.1; }
+.summarySign { width:51%; margin:6mm 0 0 auto; }
+.summarySign div { display:grid; grid-template-columns:32mm 1fr; min-height:7mm; align-items:center; }
+.subtopicPaper h1 { margin:0 0 5mm; padding-bottom:2mm; border-bottom:3px double #000; text-align:center; font-size:18pt; }
+.subtopicTable section h2 { margin:2mm 0 0; padding:1.5mm 0 .5mm; font-size:16pt; }
+.subtopicTable section div,.subtopicTable>.summaryAmount { display:grid; grid-template-columns:1fr 35mm 11mm; column-gap:3mm; min-height:8mm; align-items:center; }
+.subtopicTable section div b { text-align:right; font-weight:400; }
+.subtopicTable>.summaryAmount { border-top:0; border-bottom:1px solid #000; }
+.subtopicTable>.summaryAmount.strong { border-top:3px double #000; border-bottom:3px double #000; }
+@media(max-width:1000px){.summaryPaper,.subtopicPaper{transform-origin:top left;transform:scale(.72);margin-bottom:-80mm}.summaryWorkspace{overflow:hidden}}
+@media print{@page{size:A4 portrait;margin:0}.summaryToolbar{display:none!important}.summaryPaper,.subtopicPaper{width:210mm;height:297mm;min-height:297mm;margin:0;padding:14mm;box-shadow:none;transform:none;break-after:page}.subtopicPaper{break-after:auto}}

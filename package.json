@@ -1,0 +1,13 @@
+{
+  "name": "web-for-estimate",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "dev": "concurrently -n WEB,API -c cyan,green \"npm:dev:web\" \"npm:dev:api\"",
+    "dev:web": "npm run dev --workspace @estimate/web",
+    "dev:api": "npm run dev --workspace @estimate/api",
+    "build": "npm run build --workspace @estimate/api && npm run build --workspace @estimate/web",
+    "test": "npm run test --workspace @estimate/api"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}

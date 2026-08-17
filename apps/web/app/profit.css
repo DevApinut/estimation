@@ -1,0 +1,104 @@
+.profitTable thead {
+  border-top: 3px double #000;
+  border-bottom: 3px double #000;
+}
+
+.profitTable thead th {
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.profitTable thead .headingRow th {
+  height: 8mm;
+  padding: 1.3mm 1mm 0;
+  font-size: 15pt;
+}
+
+.profitTable thead .unitRow th {
+  height: 6mm;
+  padding: 0 1mm 1.2mm;
+  font-size: 12pt;
+  font-weight: 400;
+}
+
+.profitTable thead .departmentHeading {
+  padding: 0 !important;
+  font-size: 17pt !important;
+  letter-spacing: .2px;
+}
+
+.profitMeta .job {
+  border-bottom: 0;
+  min-height: 0;
+  padding-bottom: 0;
+}
+
+.profitMeta {
+  grid-template-columns: 15mm 28mm 21mm 42mm 1fr;
+  row-gap: 0;
+}
+
+.profitRegion {
+  font-weight: 400;
+  white-space: nowrap;
+  padding-left: 3mm;
+}
+
+.profitNotice {
+  margin-top: 0;
+}
+
+.calculatedRow {
+  border-top: 2px solid #18231e;
+  border-bottom: 2px solid #18231e;
+}
+
+.calculatedAmount {
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.calculatedAmount input[readonly] {
+  border-color: #18231e;
+  background: transparent;
+  font-weight: 800;
+}
+
+.calculatedAmount small {
+  position: absolute;
+  right: 2px;
+  bottom: 0;
+  color: #18231e;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.checkSelect {
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #dce4df;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkSelect input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: #18231e;
+  cursor: pointer;
+}
+
+.checkSelect span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.profitTable .longText {
+  letter-spacing: 0;
+  white-space: nowrap;
+}

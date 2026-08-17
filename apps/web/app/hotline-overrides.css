@@ -1,0 +1,98 @@
+.hotlineHead,
+.hotlineRow {
+  grid-template-columns: 12mm 9mm minmax(0, 1fr) 22mm 22mm 30mm;
+  column-gap: 1.5mm;
+}
+
+.hotlineRow > span:nth-child(3) {
+  white-space: nowrap;
+  font-size: 15pt;
+  letter-spacing: normal;
+}
+
+.hotlineCheck {
+  width: 100%;
+  min-height: 8mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.hotlineCheck input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  appearance: none;
+  border: 1.5px solid #000;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.hotlineCheck input:checked {
+  background-color: #000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' d='M3 8.5 6.5 12 13 4.5'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+}
+
+.hotlineCheck input:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.hotlineRow > span:nth-child(3) {
+  padding-left: 1mm;
+}
+
+.hotlineHead > b:nth-child(2) {
+  text-align: center;
+  font-size: 12pt;
+}
+
+.hotlineSection h3 {
+  grid-template-columns: 12mm minmax(0, 1fr);
+  align-items: baseline;
+}
+
+.hotlineSection h3 > span:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+
+.hotlineSection h3:not(:first-child),
+.hotlineSection h3 > :nth-child(2) {
+  padding-left: 1mm;
+}
+
+.hotlineCalculated {
+  grid-template-columns: 12mm minmax(0, 1fr) 35mm;
+  align-items: baseline;
+}
+
+.hotlineCalculated > b:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+
+.hotlineCalculated.emphasis > * {
+  font-weight: 700;
+}
+
+.hotlineRow:not(.enabled) > span:nth-child(3) {
+  opacity: 1;
+}
+
+.hotlinePaper,
+.hotlinePaper input,
+.hotlinePaper input::placeholder,
+.hotlineRow,
+.hotlineHead {
+  color: #000;
+}
+
+.hotlineRow input::placeholder {
+  font-size: 10pt;
+}

@@ -1,0 +1,142 @@
+.estimateIntro {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(420px, 1.25fr);
+  gap: 28px;
+  align-items: center;
+  margin: 0 0 18px;
+  padding: 26px 28px;
+  background: #fff;
+  border: 1px solid #dfe3df;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(25, 35, 29, .06);
+}
+
+.costsView { max-width: 1500px; }
+.costsView > .summaryModuleAction { display: none; }
+.costsView .estimateIntro {
+  grid-template-columns: 1.35fr 1fr;
+  gap: 18px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  box-shadow: none;
+}
+.costsView .estimateIntro h2 { font-size: 26px; }
+.costsView .estimateIntro p { font-size: 13px; }
+.costsView .linkedCards > div { min-height: 78px; padding: 11px 13px; }
+.costsView .linkedCards b { font-size: 18px; }
+.costsView .linkedCards small { margin-top: 0; }
+
+.estimateIntro h2 { margin: 5px 0 7px; font-size: clamp(25px, 3vw, 34px); letter-spacing: -.03em; }
+.estimateIntro p { margin: 0; max-width: 580px; color: #59615c; line-height: 1.65; }
+.linkedCards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.linkedCards > div {
+  min-height: 116px;
+  padding: 17px 18px;
+  color: #1b211d;
+  background: #fafbfa;
+  border: 1px solid #d9dedb;
+  border-radius: 14px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+.linkedCards span { font-size: 13px; font-weight: 700; }
+.linkedCards b { font-size: 22px; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.linkedCards small { margin-top: auto; color: #69716c; font-size: 12px; }
+.sections > .moduleAction { display: none; }
+.sections .panel { overflow: hidden; border-radius: 16px; box-shadow: 0 5px 18px rgba(25,35,29,.045); }
+.sections .tr:not(.head):hover { background: #fafbfa; }
+.costsView .sections {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+.sectionNavigator {
+  position: sticky;
+  top: 16px;
+  margin-bottom: 0;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #dfe3df;
+  border-radius: 16px;
+}
+.sectionNavigatorHead { display: block; margin-bottom: 12px; }
+.sectionNavigatorHead h2 { margin-top: 4px; }
+.sectionNavigatorHead > span { display: none; }
+.sectionTabs { display: grid; grid-template-columns: 1fr; gap: 7px; }
+.sectionTabs button {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px 10px;
+  padding: 11px 12px;
+  color: #28302b;
+  background: #fafbfa;
+  border: 1px solid #dfe3df;
+  border-radius: 11px;
+  text-align: left;
+}
+.sectionTabs button span { font-size: 14px; font-weight: 750; line-height: 1.35; }
+.sectionTabs button small { color: #747c77; font-size: 11px; }
+.sectionTabs button b { font-size: 12px; font-variant-numeric: tabular-nums; text-align: left; }
+.sectionTabs button.active { color: #fff; background: #26312b; border-color: #26312b; }
+.sectionTabs button.active small { color: #ced5d0; }
+.estimateSection .panelTitle p { margin-top: 5px; font-size: 12px; }
+.costsView .estimateSection { margin: 0; padding: 24px; }
+.costsView .estimateSection .panelTitle h2 { font-size: 24px; }
+.costsView .estimateSection .tr { grid-template-columns: 72px minmax(280px, 1fr) 170px 125px 62px; gap: 10px; padding: 9px 0; align-items: center; }
+.costsView .estimateSection .tr input,
+.costsView .estimateSection .tr select { height: 46px; min-height: 46px; padding-top: 0; padding-bottom: 0; font-size: 15px; }
+.costsView .estimateSection .tr.head { padding: 5px 5px 9px; font-size: 13px; }
+.costsView .estimateSection .checkSelect { height: 46px; min-height: 46px; padding: 0 10px; background: #fafbfa; }
+.costsView .estimateSection .checkSelect { justify-content:center; }
+.costsView .estimateSection .checkSelect input { width: 20px; height: 20px; min-height: 20px; padding: 0; }
+.costsView .estimateSection .calculatedAmount { height: 46px; padding-bottom: 0; }
+.costsView .estimateSection .calculatedAmount input { height: 46px; }
+.costsView .estimateSection .calculatedAmount small { display: none; }
+.rowDelete { height:46px; padding:0 12px; color:#9a3028; background:#fff; border:1px solid #ead5d2; }
+.rowDelete:hover { background:#fff6f5; border-color:#d9aaa5; }
+.hotlineToolbar button { display: none; }
+.hotlineToolbar span { font-weight: 650; }
+
+@media (max-width: 900px) {
+  .estimateIntro { grid-template-columns: 1fr; padding: 22px; }
+  .costsView .sections { grid-template-columns: 1fr; }
+  .sectionNavigator { position: static; }
+  .sectionTabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .linkedCards { grid-template-columns: 1fr; }
+  .sectionNavigatorHead { align-items: flex-start; flex-direction: column; }
+  .sectionTabs { grid-template-columns: 1fr; }
+}
+
+.employeeAdd { display:grid; grid-template-columns:repeat(6,minmax(110px,1fr)); gap:9px; padding:14px; background:#f7f9f7; border-radius:12px; }
+.employeeAdd button { white-space:nowrap; }
+.employeeList { margin-top:14px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.employeeList > div { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px; border:1px solid #e1e5e2; border-radius:10px; }
+.employeeList > div > div:first-child { display:flex; flex-direction:column; gap:3px; min-width:0; }
+.employeeList span { color:#69716c; font-size:12px; }
+.employeeList > div > div:last-child { display:flex; gap:6px; }
+.employeeList .danger { color:#9a3028; border-color:#ebd4d1; }
+.employeeAdd input:disabled { color:#69716c; background:#eef1ef; }
+.personnelSection { margin-top:22px; padding-top:20px; border-top:1px solid #e4e8e5; }
+.personnelSection h3 { margin:4px 0 14px; font-size:18px; }
+.personnelRow { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.personnelRow label { display:flex; flex-direction:column; gap:7px; }
+.personnelRow label > span { color:#69746e; font-size:12px; font-weight:700; }
+.personnelRow select { height:44px; }
+.employeeManager { padding:0; overflow:hidden; }
+.employeeManager summary { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:18px 22px; cursor:pointer; list-style:none; }
+.employeeManager summary::-webkit-details-marker { display:none; }
+.employeeManager summary h2 { margin:0; }
+.employeeManager summary p { margin-top:4px; }
+.employeeManager summary > span { color:#176c46; font-size:13px; font-weight:750; white-space:nowrap; }
+.employeeManager[open] summary { border-bottom:1px solid #e1e5e2; }
+.employeeManager[open] summary > span { font-size:0; }
+.employeeManager[open] summary > span::after { content:"ย่อส่วนจัดการรายชื่อ"; font-size:13px; }
+.employeeManagerBody { padding:18px 22px 22px; }
+@media(max-width:1000px){.employeeAdd{grid-template-columns:repeat(3,1fr)}.employeeList{grid-template-columns:1fr}}
+@media(max-width:700px){.personnelRow{grid-template-columns:1fr}.employeeAdd{grid-template-columns:1fr}}

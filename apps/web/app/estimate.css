@@ -11,7 +11,7 @@
   box-shadow: 0 10px 30px rgba(25, 35, 29, .06);
 }
 
-.costsView { max-width: 1500px; }
+.costsView { max-width: 1380px; }
 .costsView > .summaryModuleAction { display: none; }
 .costsView .estimateIntro {
   grid-template-columns: 1.35fr 1fr;
@@ -100,6 +100,7 @@
 .rowDelete:hover { background:#fff6f5; border-color:#d9aaa5; }
 .hotlineToolbar button { display: none; }
 .hotlineToolbar span { font-weight: 650; }
+.persistentHotline[hidden] { display:none!important; }
 
 @media (max-width: 900px) {
   .estimateIntro { grid-template-columns: 1fr; padding: 22px; }

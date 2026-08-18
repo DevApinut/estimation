@@ -5,6 +5,7 @@ import { calculateEstimate } from "./calculation.js";
 import { seedEstimate } from "./seed.js";
 import { calculateHotline } from "./hotline.js";
 import { addEmployee, listEmployees, removeEmployee, updateEmployee } from "./employeeStore.js";
+import { calculateWorkTemplate, workTemplates } from "./workTemplates.js";
 
 const app = express();
 app.use(cors({ origin: process.env.WEB_ORIGIN ?? "http://localhost:3000" }));
@@ -21,6 +22,8 @@ const hotlineSchema=z.object({regularDays:z.number(),regularRate:z.number(),holi
 
 app.get("/health", (_req, res) => res.json({ ok:true, service:"estimate-api" }));
 app.get("/api/estimate/template", (_req, res) => res.json(seedEstimate));
+app.get("/api/work-templates",(_req,res)=>res.json(workTemplates));
+app.post("/api/work-templates/calculate",(req,res)=>{const parsed=z.array(z.object({id:z.string(),description:z.string(),quantity:z.number(),unitPrice:z.number(),labor:z.number()})).safeParse(req.body);if(!parsed.success)return res.status(400).json({message:"ข้อมูลรายการไม่ถูกต้อง"});return res.json(calculateWorkTemplate(parsed.data));});
 const employeeSchema=z.object({id:z.string().trim().min(1),position:z.string().trim(),prefix:z.string().trim().min(1),firstName:z.string().trim().min(1),lastName:z.string().trim().min(1),phone:z.string().trim()});
 const employeeUpdateSchema=employeeSchema.omit({id:true});
 app.get("/api/employees", async(_req, res) => res.json(await listEmployees()));

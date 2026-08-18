@@ -96,3 +96,151 @@
 .hotlineRow input::placeholder {
   font-size: 10pt;
 }
+
+/* Printable document mode, matching the profit and summary reports. */
+.hotlinePaper {
+  border: 1px solid #777;
+  box-sizing: border-box;
+  page: hotline-report;
+}
+
+.hotlineJob,
+.hotlineHead,
+.hotlineTotal {
+  break-inside: avoid;
+}
+
+.hotlineSection,
+.hotlineCalculated,
+.hotlineSign {
+  break-inside: avoid;
+}
+
+@media print {
+  @page hotline-report {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  html,
+  body {
+    width: 210mm;
+    min-height: 297mm;
+    background: #fff !important;
+  }
+
+  main {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hotlineToolbar {
+    display: none !important;
+  }
+
+  .hotlineWorkspace {
+    width: 194mm;
+    margin: 0;
+    overflow: visible !important;
+  }
+
+  .hotlinePaper {
+    box-sizing: border-box;
+    width: 194mm !important;
+    height: auto !important;
+    min-height: 281mm !important;
+    margin: 0 !important;
+    padding: 8mm 10mm !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    overflow: visible !important;
+    color: #000 !important;
+    font-family: "TH Sarabun New", "Noto Sans Thai", Tahoma, sans-serif !important;
+    font-size: 13.5pt !important;
+    line-height: 1.15;
+    print-color-adjust: exact;
+  }
+
+  .hotlinePaper h1 {
+    font-size: 16pt;
+  }
+
+  .hotlinePaper h2 {
+    font-size: 14.5pt;
+  }
+
+  .hotlineHead,
+  .hotlineRow {
+    grid-template-columns: 10mm 8mm minmax(0, 1fr) 21mm 21mm 29mm;
+    column-gap: 1mm;
+  }
+
+  .hotlineHead {
+    min-height: 9mm;
+  }
+
+  .hotlineRow {
+    min-height: 6.8mm;
+  }
+
+  .hotlineRow > span:nth-child(3) {
+    font-size: 13.5pt;
+  }
+
+  .hotlineSection h3 {
+    grid-template-columns: 10mm minmax(0, 1fr);
+    margin: 1mm 0 .3mm;
+    font-size: 13.5pt;
+  }
+
+  .hotlineCalculated {
+    grid-template-columns: 10mm minmax(0, 1fr) 29mm;
+    min-height: 6.8mm;
+  }
+
+  .hotlineRow input {
+    height: 6mm;
+    padding: 0 .7mm;
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
+    font-size: 13pt;
+    appearance: textfield;
+  }
+
+  .hotlineRow input::-webkit-inner-spin-button,
+  .hotlineRow input::-webkit-outer-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+
+  .hotlineCheck input {
+    width: 14px;
+    height: 14px;
+    border: 1.25px solid #000;
+    print-color-adjust: exact;
+  }
+
+  .hotlineTotal {
+    grid-template-columns: 1fr 29mm 10mm;
+    min-height: 8mm;
+  }
+
+  .hotlinePaper > p {
+    margin: 1.5mm 0;
+    font-size: 12pt;
+  }
+
+  .hotlineSign {
+    width: 54%;
+    margin-top: 3mm;
+    grid-template-columns: 28mm 1fr;
+  }
+}

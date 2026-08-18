@@ -7,6 +7,7 @@ import "./hotline-overrides.css";
 import "./estimate.css";
 import "./work-template.css";
 import "./price-manager.css";
+import "./letter-editor.css";
 import "./print-reports.css";
 
 export const metadata: Metadata = { title:"ระบบประมาณการค่าใช้จ่าย", description:"แปลงจาก ออกเอกสาร.xlsm" };

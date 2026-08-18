@@ -1,6 +1,7 @@
 .profitPaper { page:profit-report; }
 .hotlinePaper { page:hotline-report; }
 .summaryPaper,.subtopicPaper,.customerTablePaper { page:summary-report; }
+.letterPaper { page:letter-report; }
 .persistentHotline:not([hidden]) .hotlineToolbar {
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
@@ -17,6 +18,7 @@
 @page hotline-report { size:A4 portrait; margin:10mm 0 0; }
 @page summary-report { size:A4 portrait; margin:10mm 0 0; }
 @page work-template-report { size:A4 landscape; margin:10mm 8mm 8mm; }
+@page letter-report { size:A4 portrait; margin:10mm 0 0; }
 
 @media print {
   html:has(.profitWorkspace),body:has(.profitWorkspace),
@@ -25,12 +27,16 @@
     width:210mm!important;height:auto!important;min-height:287mm!important;
     margin:0!important;padding:0!important;background:#fff!important;overflow:visible!important;
   }
+  html:has(.persistentLetter:not([hidden])),body:has(.persistentLetter:not([hidden])) {
+    width:210mm!important;height:auto!important;min-height:287mm!important;margin:0!important;padding:0!important;background:#fff!important;overflow:visible!important;
+  }
   body:has(.profitWorkspace) main,
   body:has(.persistentHotline:not([hidden])) main,
   body:has(.summaryWorkspace) main {
     width:210mm!important;max-width:none!important;margin:0!important;padding:0!important;
   }
-  .persistentHotline[hidden],.persistentWorkTemplates[hidden] { display:none!important; }
+  body:has(.persistentLetter:not([hidden])) main { width:210mm!important;max-width:none!important;margin:0!important;padding:0!important; }
+  .persistentHotline[hidden],.persistentWorkTemplates[hidden],.persistentLetter[hidden] { display:none!important; }
   .profitPaper {
     box-sizing:border-box;width:210mm!important;height:287mm!important;min-height:287mm!important;
     margin:0!important;transform:none!important;

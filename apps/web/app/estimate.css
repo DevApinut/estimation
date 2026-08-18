@@ -22,6 +22,11 @@
 }
 .costsView .estimateIntro h2 { font-size: 26px; }
 .costsView .estimateIntro p { font-size: 13px; }
+.sectionTitleEditor { display:grid;grid-template-columns:minmax(300px,650px) 1fr;gap:18px;align-items:end;margin:0 0 14px;padding:14px 18px;background:#fff;border:1px solid var(--line);border-radius:14px; }
+.sectionTitleEditor label { display:flex;flex-direction:column;gap:6px; }
+.sectionTitleEditor label span { font-size:12px;font-weight:700;color:var(--muted); }
+.sectionTitleEditor input { height:42px;font-weight:700; }
+.sectionTitleEditor p { padding-bottom:10px;font-size:12px; }
 .costsView .linkedCards > div { min-height: 78px; padding: 11px 13px; }
 .costsView .linkedCards b { font-size: 18px; }
 .costsView .linkedCards small { margin-top: 0; }
@@ -98,6 +103,10 @@
 .costsView .estimateSection .calculatedAmount small { display: none; }
 .rowDelete { height:46px; padding:0 12px; color:#9a3028; background:#fff; border:1px solid #ead5d2; }
 .rowDelete:hover { background:#fff6f5; border-color:#d9aaa5; }
+.kvaFormulaEditor { display:grid;grid-template-columns:auto 72px auto 72px auto;gap:6px;align-items:center;min-width:0; }
+.kvaFormulaEditor span { color:var(--ink);font-size:14px;font-weight:600;white-space:nowrap; }
+.costsView .estimateSection .kvaFormulaEditor input { min-width:0;width:100%;padding:0 7px;text-align:right; }
+.rowDelete.locked { padding:0 7px;color:#69746e;background:#eef1ef;border-color:#dce4df;cursor:not-allowed;font-size:11px; }
 .hotlineToolbar button { display: none; }
 .hotlineToolbar span { font-weight: 650; }
 .persistentHotline[hidden] { display:none!important; }
@@ -107,6 +116,7 @@
   .costsView .sections { grid-template-columns: 1fr; }
   .sectionNavigator { position: static; }
   .sectionTabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sectionTitleEditor { grid-template-columns:1fr; }
 }
 @media (max-width: 600px) {
   .linkedCards { grid-template-columns: 1fr; }

@@ -1,0 +1,67 @@
+.profitPaper { page:profit-report; }
+.hotlinePaper { page:hotline-report; }
+.summaryPaper,.subtopicPaper,.customerTablePaper { page:summary-report; }
+.persistentHotline:not([hidden]) .hotlineToolbar {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  width:210mm;
+  max-width:100%;
+  margin:0 auto 16px;
+}
+.persistentHotline:not([hidden]) .hotlineToolbar span { text-align:left; }
+.persistentHotline:not([hidden]) .hotlineToolbar button { display:inline-flex;justify-self:end; }
+.persistentHotline:not([hidden]) .hotlineHead> b:nth-child(4) { white-space:nowrap;line-height:1.05; }
+
+@page profit-report { size:A4 portrait; margin:10mm 0 0; }
+@page hotline-report { size:A4 portrait; margin:10mm 0 0; }
+@page summary-report { size:A4 portrait; margin:10mm 0 0; }
+@page work-template-report { size:A4 landscape; margin:10mm 8mm 8mm; }
+
+@media print {
+  html:has(.profitWorkspace),body:has(.profitWorkspace),
+  html:has(.persistentHotline:not([hidden])),body:has(.persistentHotline:not([hidden])),
+  html:has(.summaryWorkspace),body:has(.summaryWorkspace) {
+    width:210mm!important;height:auto!important;min-height:287mm!important;
+    margin:0!important;padding:0!important;background:#fff!important;overflow:visible!important;
+  }
+  body:has(.profitWorkspace) main,
+  body:has(.persistentHotline:not([hidden])) main,
+  body:has(.summaryWorkspace) main {
+    width:210mm!important;max-width:none!important;margin:0!important;padding:0!important;
+  }
+  .persistentHotline[hidden],.persistentWorkTemplates[hidden] { display:none!important; }
+  .profitPaper {
+    box-sizing:border-box;width:210mm!important;height:287mm!important;min-height:287mm!important;
+    margin:0!important;transform:none!important;
+  }
+  .persistentHotline:not([hidden]),.persistentHotline:not([hidden]) .hotlineWorkspace {
+    display:block!important;width:210mm!important;margin:0!important;padding:0!important;overflow:visible!important;
+  }
+  .persistentHotline:not([hidden]) .hotlinePaper {
+    box-sizing:border-box;width:210mm!important;height:287mm!important;min-height:287mm!important;
+    margin:0!important;padding:8mm 10mm!important;transform:none!important;overflow:hidden!important;
+  }
+  .persistentHotline:not([hidden]) .hotlineHead,
+  .persistentHotline:not([hidden]) .hotlineRow {
+    grid-template-columns:10mm 8mm minmax(0,1fr) 25mm 21mm 29mm!important;
+  }
+  .persistentHotline:not([hidden]) .hotlinePaper input::placeholder {
+    color:transparent!important;-webkit-text-fill-color:transparent!important;
+  }
+  .summaryWorkspace { width:210mm!important;margin:0!important;padding:0!important;overflow:visible!important; }
+  .summaryPaper,.subtopicPaper,.customerTablePaper {
+    height:287mm!important;min-height:287mm!important;
+  }
+  .persistentWorkTemplates:not([hidden]) .workTemplatePaper {
+    width:281mm!important;height:auto!important;min-height:192mm!important;overflow:visible!important;
+  }
+  html:has(.persistentWorkTemplates:not([hidden])),
+  body:has(.persistentWorkTemplates:not([hidden])) {
+    width:281mm!important;height:auto!important;min-height:192mm!important;
+    margin:0!important;padding:0!important;background:#fff!important;overflow:visible!important;
+  }
+  body:has(.persistentWorkTemplates:not([hidden])) main {
+    width:281mm!important;min-height:192mm!important;max-width:none!important;margin:0!important;padding:0!important;
+  }
+}

@@ -2,9 +2,9 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { calculateWorkTemplate, workTemplates } from "./workTemplates.js";
 
-test("loads eight transformer sheets and Turnkey",()=>{
- assert.equal(workTemplates.length,9);
- assert.deepEqual(workTemplates.map(template=>template.sheetName),["T30-160","T250-315","T400","T>500","T 30-160","T 250-315","T 400","T >500","Turnkey"]);
+test("loads one transformer template set and Turnkey",()=>{
+ assert.equal(workTemplates.length,5);
+ assert.deepEqual(workTemplates.map(template=>template.sheetName),["T30-160","T250-315","T400","T>500","Turnkey"]);
 });
 
 test("calculates material labor operation and grand total",()=>{
